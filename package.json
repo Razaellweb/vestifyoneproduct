@@ -1,7 +1,8 @@
 {
-  "name": "my-app",
+  "name": "vestify-one",
   "version": "0.1.0",
   "private": true,
+  "description": "Vestify One landing — save, invest, and borrow for Nigerians.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

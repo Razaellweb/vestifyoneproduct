@@ -3,34 +3,34 @@ import React, { useState } from "react";
 
 const faqs = [
   {
-    question: "How do I open an account with GeekPay?",
+    question: "How do I start saving with Vestify One?",
     answer:
-      'Opening an account with GeekPay is easy. Simply visit our website and click on the "Open an Account" button. Follow the prompts, provide the required information, and complete the application process. If you have any questions or need assistance, our customer support team is available to help.',
+      'Create an account, set your save plan (daily/weekly/monthly), and connect your card or bank via Paystack/Flutterwave. We auto‑debit and you can pause anytime in Settings.',
   },
   {
-    question: "What documents do I need to provide to apply for a loan?",
+    question: "What is the loan limit and how fast is disbursement?",
     answer:
-      "The documents required for a loan application may vary depending on the type of loan you are applying for. Generally, you will need to provide identification documents (such as a passport or driver's license), proof of income (such as pay stubs or tax returns), and information about the collateral (if applicable). Our loan officers will guide you through the specific requirements during the application process.",
+      "You can access instant collateralized loans up to 80% of your savings. Disbursement is near‑instant after eligibility checks. Repay flexibly from future saves.",
   },
   {
-    question: "How can I access my accounts online?",
+    question: "Are my funds and data secure?",
     answer:
-      'Accessing your accounts online is simple and secure. Visit our website and click on the "Login" button. Enter your username and password to access your accounts. If you haven\'t registered for online banking, click on the "Enroll Now" button and follow the registration process. If you need assistance, our customer support team is available to guide you.',
+      "Yes. We use bank‑grade encryption, device binding, and PCI‑DSS compliant processors. 2FA and biometrics are supported on compatible devices.",
   },
   {
-    question: "Are my transactions and personal information secure?",
+    question: "How do Ajo/Esusu circles work?",
     answer:
-      "At GeekPay, we prioritize the security of your transactions and personal information. We employ industry-leading encryption and multi-factor authentication to ensure that your data is protected. Additionally, we regularly update our security measures to stay ahead of emerging threats. You can bank with confidence knowing that we have robust security systems in place.",
+      "Create or join a circle, set contribution amount and schedule, invite members, and payouts rotate automatically. Smart reminders help everyone stay consistent.",
   },
   {
-    question: "What is GeekPay's mobile app available on?",
+    question: "What fees should I expect?",
     answer:
-      "Our mobile app is available for download on both iOS and Android devices. You can use it to check balances, transfer funds, deposit checks, and manage your finances on the go.",
+      "No hidden charges. We earn via small transaction fees, investment commissions, and interest on loans. All fees are shown clearly before you proceed.",
   },
   {
-    question: "Can I set up automatic bill payments?",
+    question: "Is Vestify One available on mobile?",
     answer:
-      "Yes, you can set up automatic payments for recurring bills through our online banking platform. Just go to the Bill Pay section and follow the setup process.",
+      "Yes — it's mobile‑first and installable as a PWA. A native experience is coming soon.",
   },
 ];
 
@@ -39,21 +39,21 @@ const FAQ = () => {
   const visibleFaqs = showAll ? faqs : faqs.slice(0, 4);
 
   return (
-    <div className="w-full mt-[4rem] md:mt-[6rem]">
+    <div className="w-full mt-[4rem] md:mt-[6rem]" id="faq">
       {/* Header */}
       <div className="w-[97%] mx-auto md:mx-0 md:w-[68%]">
-        <h1 className="text-3xl md:text-4xl xl:text-5xl text-center md:text-left pt-4">
-          <span className="text-[#CAFF33]">Frequently </span>Asked Questions
-        </h1>
-        <h1 className="text-base pt-3.5 text-[#B3B3B3] text-center md:text-left">
-          Still you have any questions? Contact our Team via{" "}
+        <h2 className="text-3xl md:text-4xl xl:text-5xl text-center md:text-left pt-4">
+          <span className="text-[var(--accent)]">Frequently</span> Asked Questions
+        </h2>
+        <p className="text-base pt-3.5 text-muted text-center md:text-left">
+          Still have questions? Email us at
           <a
-            href="mailto:support@GeekPay.com"
-            className="text-[#CAFF33] hover:underline"
+            href="mailto:support@vestify.one"
+            className="text-[var(--primary)] hover:underline ml-1"
           >
-            support@GeekPay.com
+            support@vestify.one
           </a>
-        </h1>
+        </p>
       </div>
 
       {/* FAQ List */}
@@ -62,19 +62,16 @@ const FAQ = () => {
           {visibleFaqs.map((faq, index) => (
             <div
               key={index}
-              className="w-[97%] mx-auto md:w-[49%] 2xl:w-[48%] mt-[4.5%] md:mt-[2%] bg-[#1C1C1C] rounded-[1rem] px-6 py-9 md:px-11 md:py-14 border border-[#262626]"
+              className="w-[97%] mx-auto md:w-[49%] 2xl:w-[48%] mt-[4.5%] md:mt-[2%] bg-[var(--card)] rounded-[1rem] px-6 py-9 md:px-11 md:py-14 border border-base"
             >
-              <h1 className="text-xl text-white">{faq.question}</h1>
-              <div className="my-5 h-[1px] bg-[#262626]" />
-              <p className="text-base text-[#B3B3B3]">{faq.answer}</p>
+              <h3 className="text-xl">{faq.question}</h3>
+              <div className="my-5 h-px bg-[var(--border)]" />
+              <p className="text-base text-muted">{faq.answer}</p>
             </div>
           ))}
         </div>
         {/* Fade-out effect at the bottom */}
-        <div
-  className="absolute bottom-0 left-0 w-full h-[40vh] pointer-events-none bg-gradient-to-t from-[#1E1E1E] to-transparent"
-/>
-
+        <div className="absolute bottom-0 left-0 w-full h-[40vh] pointer-events-none bg-gradient-to-t from-[var(--bg)] to-transparent" />
       </div>
 
       {/* Load More Button */}
@@ -82,7 +79,7 @@ const FAQ = () => {
         <div className="w-full flex items-center justify-center mt-5">
           <button
             onClick={() => setShowAll(true)}
-            className="px-7 py-3 rounded-full bg-[#262626] text-base cursor-pointer hover:bg-[#333333] transition-colors duration-300"
+            className="px-7 py-3 rounded-full btn-ghost text-base"
           >
             Load All FAQs ↓
           </button>

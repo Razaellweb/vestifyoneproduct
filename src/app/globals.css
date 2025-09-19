@@ -1,6 +1,78 @@
 @import "tailwindcss";
 
-/* globals.css or Testimonials.module.css */
+/* Brand theme tokens */
+:root {
+  --bg: #0b0c0f; /* dark base */
+  --fg: #fafafa; /* foreground text */
+  --muted: #cbd5e1; /* text muted */
+  --card: #121318; /* surfaces */
+  --border: #23262e; /* borders */
+  --primary: #0f766e; /* naira green */
+  --primary-contrast: #0a0a0a;
+  --secondary: #1d4ed8; /* royal blue */
+  --accent: #facc15; /* gold */
+  --ring: #22c55e; /* focus ring */
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #0b0c0f;
+  --muted: #3f3f46;
+  --card: #f8fafc;
+  --border: #e5e7eb;
+  --primary: #0f766e;
+  --primary-contrast: #ffffff;
+  --secondary: #1d4ed8;
+  --accent: #ca8a04;
+  --ring: #16a34a;
+}
+
+[data-theme="dark"] {
+  --bg: #0b0c0f;
+  --fg: #fafafa;
+  --muted: #cbd5e1;
+  --card: #121318;
+  --border: #23262e;
+  --primary: #0f766e;
+  --primary-contrast: #0a0a0a;
+  --secondary: #1d4ed8;
+  --accent: #facc15;
+  --ring: #22c55e;
+}
+
+html, body { height: 100%; }
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Card utility */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+.btn-primary:hover { filter: brightness(1.05); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg);
+}
+.btn-ghost:hover { background-color: rgba(255,255,255,0.04); }
+
+.text-muted { color: var(--muted); }
+.border-base { border-color: var(--border); }
+
+/* Slick center override remains */
 .slick-center article {
   opacity: 1 !important;
   transform: scale(1) !important;
