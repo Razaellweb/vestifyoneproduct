@@ -3,8 +3,7 @@ import { DM_Sans, Work_Sans } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import ShellSwitch from "@/components/ShellSwitch";
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
@@ -24,22 +23,13 @@ export const metadata: Metadata = {
     "Vestify One is a mobile‑first fintech for Nigeria: automated savings, curated low‑risk investments, instant collateralized loans (up to 80% of savings), Ajo/Esusu group savings, and seamless payments via Paystack/Flutterwave — with bank‑grade security.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${dmSans.variable} ${workSans.variable} antialiased relative bg-[var(--bg)] text-[var(--fg)] min-h-screen overflow-x-hidden`}
-        data-theme="dark"
-      >
-        <div className="w-[98%] md:w-[90%] 2xl:w-[80%] mx-auto pt-[2rem]">
-          <Navbar />
+      <body className={`${dmSans.variable} ${workSans.variable} antialiased relative bg-[var(--bg)] text-[var(--fg)] min-h-screen overflow-x-hidden`} data-theme="dark">
+        <ShellSwitch>
           {children}
-        </div>
-        <Footer />
+        </ShellSwitch>
       </body>
     </html>
   );
