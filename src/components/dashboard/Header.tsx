@@ -12,9 +12,9 @@ export default function Header() {
             <p className="font-semibold">Vestify One</p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <button className="px-3 py-2 rounded-xl border border-base hover:bg-white/5 flex items-center gap-2 text-sm"><QrCode className="w-4 h-4"/>Pay</button>
-          <button className="px-3 py-2 rounded-xl btn-primary flex items-center gap-2 text-sm"><PlusCircle className="w-4 h-4"/>Add Money</button>
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-1 sm:gap-2 justify-end">
+          <button className="hidden sm:flex px-3 py-2 rounded-xl border border-base hover:bg-white/5 items-center gap-2 text-sm whitespace-nowrap"><QrCode className="w-4 h-4"/> <span className="hidden sm:inline">Pay</span></button>
+          <button className="px-3 py-2 rounded-xl btn-primary flex items-center gap-2 text-sm whitespace-nowrap"><PlusCircle className="w-4 h-4"/> <span className="hidden sm:inline">Add Money</span></button>
           <button className="p-2 rounded-xl border border-base hover:bg-white/5" aria-label="notifications"><Bell className="w-5 h-5"/></button>
           <div className="w-8 h-8 rounded-full bg-[var(--card)] border border-base grid place-items-center"><WalletMinimal className="w-4 h-4"/></div>
         </div>

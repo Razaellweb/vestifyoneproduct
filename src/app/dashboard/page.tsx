@@ -13,10 +13,10 @@ export default async function DashboardOverview() {
 
   type Stat = { icon: LucideIcon; label: string; value: string; trend: number[] };
   const stats: Stat[] = [
-    { icon: PiggyBank, label: "Saves", value: "+₦9,000", trend:[2,3,3,4,6,7,9] },
-    { icon: Rocket, label: "Invest", value: "+₦4,000", trend:[1,2,2,3,3,4,4] },
+    { icon: PiggyBank, label: "Saves", value: "+\u20a69,000", trend:[2,3,3,4,6,7,9] },
+    { icon: Rocket, label: "Invest", value: "+\u20a64,000", trend:[1,2,2,3,3,4,4] },
     { icon: Users, label: "Referrals", value: "+12", trend:[0,1,2,3,4,8,12] },
-    { icon: Landmark, label: "Wallet", value: "+₦12,000", trend:[1,1,2,4,6,8,12] },
+    { icon: Landmark, label: "Wallet", value: "+\u20a612,000", trend:[1,1,2,4,6,8,12] },
   ];
 
   return (
@@ -29,10 +29,10 @@ export default async function DashboardOverview() {
             <CardContent>
               <p className="text-3xl font-semibold">{formatCurrency(data?.balances.savings || 0)}</p>
               <div className="mt-3 flex items-center gap-3 text-sm text-muted">
-                <span className="inline-flex items-center gap-1"><PiggyBank className="w-4 h-4 text-[var(--accent)]"/> Auto‑debits active</span>
+                <span className="inline-flex items-center gap-1"><PiggyBank className="w-4 h-4 text-[var(--accent)]"/> Auto\u2011debits active</span>
                 <span className="inline-flex items-center gap-1"><CircleDollarSign className="w-4 h-4 text-[var(--secondary)]"/> Loan limit: {formatCurrency((data?.balances.savings || 0) * 0.8)}</span>
               </div>
-              <div className="mt-5 grid grid-cols-3 gap-3">
+              <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[{label:"Add Money"},{label:"Withdraw"},{label:"Create Plan"}].map((a,i)=>(
                   <button key={i} className="px-3 py-2 rounded-xl border border-base hover:bg-white/5 text-sm">{a.label}</button>
                 ))}
@@ -48,15 +48,15 @@ export default async function DashboardOverview() {
 
       {/* Allocation donut */}
       <Card className="p-5">
-        <CardHeader title="Allocation" subtitle="Savings • Investments • Wallet" />
+        <CardHeader title="Allocation" subtitle="Savings \u2022 Investments \u2022 Wallet" />
         <CardContent>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 justify-center sm:justify-start">
             <DonutChart
               data={[{label:"Savings", value: 60},{label:"Invest", value: 25},{label:"Wallet", value: 15}]}
               colors={["#22c55e","#60a5fa","#facc15"]}
               center={<div className="text-center"><p className="text-xs text-muted">Total</p><p className="font-semibold">{formatCurrency((data?.balances.savings||0)+(data?.balances.investments||0)+(data?.balances.wallet||0))}</p></div>}
             />
-            <div className="grid gap-2 text-sm">
+            <div className="grid gap-2 text-sm min-w-[8rem]">
               <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#22c55e]"/> Savings</div>
               <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#60a5fa]"/> Investments</div>
               <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-[#facc15]"/> Wallet</div>
@@ -100,10 +100,10 @@ export default async function DashboardOverview() {
 
       {/* Progress + transactions */}
       <Card className="p-5">
-        <CardHeader title="Goal: New Phone" subtitle="₦600,000 target" />
+        <CardHeader title="Goal: New Phone" subtitle="\u20a6600,000 target" />
         <CardContent>
           <Progress value={40} />
-          <div className="mt-3 text-sm text-muted">40% complete • Next debit: Fri</div>
+          <div className="mt-3 text-sm text-muted">40% complete \u2022 Next debit: Fri</div>
           <div className="mt-4 space-y-2 text-sm">
             {(data?.txns || []).map(t => (
               <div key={t.id} className="flex items-center justify-between">

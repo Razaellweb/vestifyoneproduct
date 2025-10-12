@@ -38,7 +38,7 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed md:static z-50 left-0 top-0 h-full md:h-auto w-[80%] max-w-72 md:w-72 bg-[var(--card)] border-r border-base transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
+        className={`fixed md:static z-50 left-0 top-0 h-full md:h-auto w-[80%] max-w-72 md:w-72 bg-[var(--card)] border-r border-base overflow-y-auto transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
       >
         <div className="p-4 border-b border-base flex items-center gap-3">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[var(--primary)] to-[var(--secondary)]" />
