@@ -21,7 +21,7 @@ export default function Sidebar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <aside className="h-full">
+    <aside className="md:h-full h-0">
       {/* Mobile trigger */}
       <button
         className="md:hidden fixed left-4 top-4 z-50 px-3 py-2 rounded-full btn-primary shadow"
