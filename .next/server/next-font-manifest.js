@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/abdulazeezusman/fullstack/vestifyoneproduct-6/src/app/layout\":[\"static/media/13971731025ec697-s.p.woff2\",\"static/media/c9e6921c7fc300d8-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
